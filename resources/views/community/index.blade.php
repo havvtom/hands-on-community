@@ -8,6 +8,7 @@
 				<ul class="links">
 					@forelse($links as $link)
 					<li class="links_link">
+						<span class="badge badge-default" style="background-color: {{$link->channel->color}};">{{$link->channel->title}}</span>
 						<a href="{{$link->link}}" target="_blank">{{$link->title}}</a>
 						<small>Contributed by <a href="#">{{$link->user->name}}</a> {{$link->updated_at->diffForHumans()}}</small>
 					</li>

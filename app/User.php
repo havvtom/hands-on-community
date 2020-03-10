@@ -45,6 +45,16 @@ class User extends Authenticatable
 
     public function contribute($attributes){
 
+        if($this->isTrusted()){
+            $attributes['approved'] = true;
+        }
+        // dd($attributes);
         $this->communityLinks()->create($attributes);
+        
+    }
+
+    public function isTrusted(){
+
+        return $this->trusted;
     }
 }
