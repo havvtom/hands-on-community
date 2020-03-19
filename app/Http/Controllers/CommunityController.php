@@ -25,6 +25,12 @@ class CommunityController extends Controller
 
     	Auth()->user()->contribute($attributes);
 
-    	return redirect()->back();
+        //user is trusted
+        
+
+        //if user is not trusted
+        //Your contribution will be approved shortly
+
+    	return redirect()->back()->with(["flash" => Auth()->user()->isTrusted() ? "Thanks for the contribution" : "Your contribution will be approved shortly"]);
     }
 }

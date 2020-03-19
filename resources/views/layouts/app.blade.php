@@ -75,6 +75,7 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <flash message="hey wens"></flash>
     </div>
 </body>
 </html>
